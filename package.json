@@ -1,6 +1,6 @@
 {
   "name": "corneliuses-components",
-  "version": "0.1.0",
+  "version": "0.1.01",
   "private": false,
   "dependencies": {
     "@babel/cli": "^7.16.0",
