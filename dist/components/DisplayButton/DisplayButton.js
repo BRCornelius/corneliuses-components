@@ -17,9 +17,13 @@ const DisplayButton = _ref => {
     children,
     value
   } = _ref;
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "CC-Display_Button--container"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/".concat(value)
-  }, children, /*#__PURE__*/_react.default.createElement("button", null, buttonLabel)));
+  }, children, /*#__PURE__*/_react.default.createElement("button", {
+    className: "CC-Display_Button--button"
+  }, buttonLabel)));
 };
 
 var _default = DisplayButton;
