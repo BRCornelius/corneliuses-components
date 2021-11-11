@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isMobile, useOutsideClick } from '../../utilities';
 
-const Header = ({icon, companyLogo, links}) => {
+const Header = ({icon, logo, links}) => {
     const [open, setOpen] =useState(false)
     const toggleNav = () => setOpen(!open)
     const wrapperRef = useRef(null)
@@ -14,7 +14,7 @@ const Header = ({icon, companyLogo, links}) => {
     return isMobile
         ? <>
             <div className="CC-Header--top_bar">
-                <img alt="logo" className="CC-Header--logo" src={companyLogo} />
+                <img alt="logo" className="CC-Header--logo" src={logo} />
             </div>
             <div className={open ? "CC-Header--hamburger_open" : "CC-Header--hamburger_menu"}>
                 {!open && <img alt="menu" className="CC-Header--hamburger_icon" src={iconURL} onClick={toggleNav}/>}
@@ -23,8 +23,8 @@ const Header = ({icon, companyLogo, links}) => {
                 </div>}
             </div>
         </>
-        : <div className="nav-menu">
-            <img alt="logo" className="CC-Header--logo" src={companyLogo} />
+        : <div className="CC-Header--nav_menu">
+            <img alt="logo" className="CC-Header--logo" src={logo} />
             <nav className="CC-Header--nav-link-container">
                 {links.map(link => <Link to={`/${link.path}`} className="CC-Header--nav-link">{link.label}</Link>)}
             </nav>
