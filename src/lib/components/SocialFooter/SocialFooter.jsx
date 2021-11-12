@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SocialFooter = ({socialLinks, children, isCorneliuses}) => <div className="CC-Social_Footer--container">
-    <div className="CC-Social_Footer--links">
+    <div className="CC-Social_Footer--links_primary">
         {socialLinks.map(link => <a key={link.id} class="CC-Social_Footer--link" id={link.id} href={link.path}>{link.label}</a>)}
     </div>
-    <div className="CC-Social_Footer--links">
+    <div className="CC-Social_Footer--links_secondary">
         {isCorneliuses && <a class="CC-Social_Footer--link" id="corneliuses" href="http://corneliuses.com">Family</a>}
         {children}
     </div>

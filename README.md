@@ -71,7 +71,8 @@ const links = [{label: 'Home', path: 'home'},{label: 'New World', path: 'new-wor
 | **className** | **Description** *(optional)* |
 | -- | -- |
 | CC-Social_Footer--container | The entire footer container |
-| CC-Social_Footer--links | Holds the social media site links |
+| CC-Social_Footer--links_primary | Holds the social media site links |
+| CC-Social_Footer--links_secondary | Holds the alternate contact info |
 | CC-Social_Footer--link | Text link to social media site |
 ```
 const socialLinks = [{id: 'twitter', label: 'Twitter', path: 'www.twitter.com'}, {id: 'facebook', label: 'facebook', path: 'www.facebook.com'}]
