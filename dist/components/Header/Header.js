@@ -31,36 +31,36 @@ const Header = _ref => {
   const iconURL = icon || "https://img.icons8.com/material-outlined/24/000000/menu--v1.png";
   (0, _utilities.useOutsideClick)(wrapperRef, toggleNav);
   return _utilities.isMobile ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Header--top_bar"
+    className: "CC-Navigation-Header--top_bar"
   }, /*#__PURE__*/_react.default.createElement("img", {
     alt: "logo",
-    className: "CC-Header--logo",
+    className: "CC-Navigation-Header--logo",
     src: companyLogo
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: open ? "CC-Header--hamburger_open" : "CC-Header--hamburger_menu"
+    className: open ? "CC-Navigation-Header--hamburger_open" : "CC-Navigation-Header--hamburger_menu"
   }, !open && /*#__PURE__*/_react.default.createElement("img", {
     alt: "menu",
-    className: "CC-Header--hamburger_icon",
+    className: "CC-Navigation-Header--hamburger_icon",
     src: iconURL,
     onClick: toggleNav
   }), open && /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Header--links-menu",
+    className: "CC-Navigation-Header--links-menu",
     ref: wrapperRef
   }, links.map(link => /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/".concat(link.path),
-    className: "CC-Header--nav-link",
+    className: "CC-Navigation-Header--nav-link",
     onClick: toggleNav
   }, link.label))))) : /*#__PURE__*/_react.default.createElement("div", {
     className: "nav-menu"
   }, /*#__PURE__*/_react.default.createElement("img", {
     alt: "logo",
-    className: "CC-Header--logo",
+    className: "CC-Navigation-Header--logo",
     src: companyLogo
   }), /*#__PURE__*/_react.default.createElement("nav", {
-    className: "CC-Header--nav-link-container"
+    className: "CC-Navigation-Header--nav-link-container"
   }, links.map(link => /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/".concat(link.path),
-    className: "CC-Header--nav-link"
+    className: "CC-Navigation-Header--nav-link"
   }, link.label))));
 };
 

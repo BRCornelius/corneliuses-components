@@ -1,4 +1,5 @@
 import DisplayButton from "./DisplayButton/DisplayButton";
-import Header from "./Header/Header";
+import NavigationHeader from "./NavigationHeader/NavigationHeader";
+import SocialFooter from "./SocialFooter/SocialFooter";
 
-export { DisplayButton, Header };
+export { DisplayButton, NavigationHeader, SocialFooter };

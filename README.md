@@ -24,31 +24,46 @@ The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifi
 ---
 # Component Documentation
 ## Display Button
-| **Props**     | **Type**      | **Other Info** *(optional)*      |
-| --            | --            | -- |
-| buttonLabel   | *string*      | |
-| children      | *React node*  | |
-| value         | *string*      | |
+| **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
+| -- | -- | -- | -- |
+| buttonLabel | *string* | | |
+| children | *React node* | | |
+| value | *string* | Yes | |
 
 | **className** | **Description** *(optional)* |
 | -- | -- |
 | CC-Display_Button--container  | |
 | CC-Display_Button--button     | |
-## Header
-| **Props**     | **Type**      | **Other Info** *(optional)*      |
-| --            | --            | -- |
-| icon          | *string*      | The url of the icon to be used for the svp menu |
-| logo          | *string*      | The url of the logo to be used |
-| links         | *object*      | { label: *string*, path: *string* } |
+```
+<DisplayButton buttonLabel="Navigate to the New World" value="new-world">
+    <h1>Hello NEW World</h1>
+</DisplayButton>
+```
+## NavigationHeader
+| **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
+| -- | -- | -- | -- |
+| icon | *string* | | The url of the icon to be used for the svp menu |
+| logo | *string* | Yes | The url of the logo to be used |
+| links | *array* | Yes | **Element schema:** { label: *string*, path: *string* } |
 
 | **className** | **Description** *(optional)* |
 | -- | -- |
-| CC-Header--top_bar  | In SVP, the container for the logo |
-| CC-Header--logo     | |
-| CC-Header--hamburger_open | The menu button when the menu is open |
-| CC-Header--hamburger_menu | The menu button when the menu is closed |
-| CC-Header--hamburger_icon | |
-| CC-Header--links-menu | In SVP, the container for the nav links |
-| CC-Header--nav-link | Nav links |
-| CC-Header--nav_menu | In LVP, the container for the logo and the nav links |
-| CC-Header--nav-link-container | In LVP, the container for the nav links |
+| CC-Navigation-Header--top_bar  | In SVP, the container for the logo |
+| CC-Navigation-Header--logo     | |
+| CC-Navigation-Header--hamburger_open | The menu button when the menu is open |
+| CC-Navigation-Header--hamburger_menu | The menu button when the menu is closed |
+| CC-Navigation-Header--hamburger_icon | |
+| CC-Navigation-Header--links-menu | In SVP, the container for the nav links |
+| CC-Navigation-Header--nav-link | Nav links |
+| CC-Navigation-Header--nav_menu | In LVP, the container for the logo and the nav links |
+| CC-Navigation-Header--nav-link-container | In LVP, the container for the nav links |
+```
+const links = [{label: 'Home', path: 'home'},{label: 'New World', path: 'new-world'}]
+<NavigationHeader icon="https://hamburger.icon.com" logo="https://fun.image.com" links={links} />
+```
+## Social Footer
+| **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
+| -- | -- | -- | -- |
+| displayContact | *boolean* | | |
+| isCorneliuses | *boolean* | | |
+| socialLinks | *array* |  | **Element schema:** {id: *string*, label: *string*, path: *string*} |
