@@ -16,10 +16,11 @@ Components should be exported as default from their file but as a part of the gl
 ### Styling
 The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifier`.
 ### Publishing
-Update the package.json file with a new version number.
-Major versions are for new features and integrations.
-Minor versions are for new components or extant feature expansions.
-Run: `yarn babel` then `npm publish`
+
+- Update the package.json file with a new version number.
+-- Major versions are for new features and integrations.
+-- Minor versions are for new components or extant feature expansions.
+- Run: `yarn babel` then `npm publish`
 ---
 # Component Documentation
 ## Display Button
