@@ -18,8 +18,8 @@ The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifi
 ### Publishing
 
 - Update the package.json file with a new version number.
-- - Major versions are for new features and integrations.
-- - Minor versions are for new components or extant feature expansions.
+ - Major versions are for new features and integrations.
+ - Minor versions are for new components or extant feature expansions.
 - Run: `yarn babel` then `npm publish`
 ---
 # Component Documentation
