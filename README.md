@@ -64,6 +64,18 @@ const links = [{label: 'Home', path: 'home'},{label: 'New World', path: 'new-wor
 ## Social Footer
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
-| displayContact | *boolean* | | |
+| children | *node* | | |
 | isCorneliuses | *boolean* | | |
 | socialLinks | *array* |  | **Element schema:** {id: *string*, label: *string*, path: *string*} |
+
+| **className** | **Description** *(optional)* |
+| -- | -- |
+| CC-Social_Footer--container | The entire footer container |
+| CC-Social_Footer--links | Holds the social media site links |
+| CC-Social_Footer--link | Text link to social media site |
+```
+const socialLinks = [{id: 'twitter', label: 'Twitter', path: 'www.twitter.com'}, {id: 'facebook', label: 'facebook', path: 'www.facebook.com'}]
+<SocialFooter socialLinks={socialLinks} isCorneliuses>
+  <AlternateContactComponent />
+</SocialFooter>
+```
