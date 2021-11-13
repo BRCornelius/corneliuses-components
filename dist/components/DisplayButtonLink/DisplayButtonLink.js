@@ -21,9 +21,9 @@ const DisplayButtonLink = _ref => {
   } = _ref;
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/".concat(value),
-    className: "CC-Display_Button--container"
+    className: "CC-Display_Button_Link--container"
   }, children, /*#__PURE__*/_react.default.createElement("button", {
-    className: "CC-Display_Button--button"
+    className: "CC-Display_Button_Link--button"
   }, buttonLabel));
 };
 

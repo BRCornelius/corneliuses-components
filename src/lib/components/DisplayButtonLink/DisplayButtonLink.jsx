@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const DisplayButtonLink = ({buttonLabel,children,value}) => <Link to={`/${value}`} className="CC-Display_Button--container">
+const DisplayButtonLink = ({buttonLabel,children,value}) => <Link to={`/${value}`} className="CC-Display_Button_Link--container">
     {children}
-    <button className="CC-Display_Button--button">
+    <button className="CC-Display_Button_Link--button">
         {buttonLabel}
     </button>
 </Link>;

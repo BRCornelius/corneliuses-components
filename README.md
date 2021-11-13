@@ -23,7 +23,7 @@ The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifi
 - Run: `yarn babel` then `npm publish`
 ---
 # Component Documentation
-## Display Button
+## Display Button Link
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | buttonLabel | *string* | | |
@@ -32,14 +32,14 @@ The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifi
 
 | **className** | **Description** *(optional)* |
 | -- | -- |
-| CC-Display_Button--container  | |
-| CC-Display_Button--button     | |
+| CC-Display_Button_Link--container  | |
+| CC-Display_Button_Link--button     | |
 ```
-<DisplayButton buttonLabel="Navigate to the New World" value="new-world">
+<DisplayButtonLink buttonLabel="Navigate to the New World" value="new-world">
     <h1>Hello NEW World</h1>
-</DisplayButton>
+</DisplayButtonLink>
 ```
-## NavigationHeader
+## Navigation Header
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | icon | *string* | | The url of the icon to be used for the svp menu |
