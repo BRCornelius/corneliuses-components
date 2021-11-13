@@ -23,7 +23,7 @@ The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifi
 - Run: `yarn babel` then `npm publish`
 ---
 # Component Documentation
-## Display Button Link
+## **Display Button Link**
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | buttonLabel | *string* | | |
@@ -39,7 +39,7 @@ The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifi
     <h1>Hello NEW World</h1>
 </DisplayButtonLink>
 ```
-## Display Button Functional
+## **Display Button Functional**
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | children | *React node* | | |
@@ -60,7 +60,7 @@ const item = {label: "This is a button.", url: "item.image.com"};
   <h1>{item.label}</h1>
 </DisplayButtonFunctional>
 ```
-## Navigation Header
+## **Navigation Header**
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | icon | *string* | | The url of the icon to be used for the svp menu |
@@ -82,7 +82,7 @@ const item = {label: "This is a button.", url: "item.image.com"};
 const links = [{label: 'Home', path: 'home'},{label: 'New World', path: 'new-world'}]
 <NavigationHeader icon="https://hamburger.icon.com" logo="https://fun.image.com" links={links} />
 ```
-## Social Footer
+## **Social Footer**
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | children | *node* | | |
@@ -101,7 +101,7 @@ const socialLinks = [{id: 'twitter', label: 'Twitter', path: 'www.twitter.com'},
   <AlternateContactComponent />
 </SocialFooter>
 ```
-## Contact Form
+## **Contact Form**
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | handleSubmit | *function* | Yes | Function to run on submit of form with form contents as parameter object |
@@ -117,7 +117,7 @@ const socialLinks = [{id: 'twitter', label: 'Twitter', path: 'www.twitter.com'},
 const handleSubmit = (inputs) => console.log(inputs);
 <ContactForm handleSubmit={handleSubmit} />
 ```
-## Contact
+## **Contact**
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | buttonLabel | *string* | | |
