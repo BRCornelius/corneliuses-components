@@ -56,6 +56,7 @@ The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifi
 ```
 const clickFunction = () => console.log('Item clicked')
 const item = {label: "This is a button.", url: "item.image.com"};
+
 <DisplayButtonFunctional clickFunction={clickFunction} isActive={checkIfActive()} item={item}>
   <h1>{item.label}</h1>
 </DisplayButtonFunctional>
@@ -80,6 +81,7 @@ const item = {label: "This is a button.", url: "item.image.com"};
 | CC-Navigation-Header--nav-link-container | In LVP, the container for the nav links |
 ```
 const links = [{label: 'Home', path: 'home'},{label: 'New World', path: 'new-world'}]
+
 <NavigationHeader icon="https://hamburger.icon.com" logo="https://fun.image.com" links={links} />
 ```
 ## **Social Footer**
@@ -97,6 +99,7 @@ const links = [{label: 'Home', path: 'home'},{label: 'New World', path: 'new-wor
 | CC-Social_Footer--link | Text link to social media site |
 ```
 const socialLinks = [{id: 'twitter', label: 'Twitter', path: 'www.twitter.com'}, {id: 'facebook', label: 'facebook', path: 'www.facebook.com'}]
+
 <SocialFooter socialLinks={socialLinks} isCorneliuses>
   <AlternateContactComponent />
 </SocialFooter>
@@ -115,6 +118,7 @@ const socialLinks = [{id: 'twitter', label: 'Twitter', path: 'www.twitter.com'},
 | CC-Contact_Form--submit | Submit button |
 ```
 const handleSubmit = (inputs) => console.log(inputs);
+
 <ContactForm handleSubmit={handleSubmit} />
 ```
 ## **Contact**
@@ -134,5 +138,23 @@ const handleSubmit = (inputs) => console.log(inputs);
 ```
 const handleTextSubmit = inputs => console.log('text', inputs)
 const handleRmsilSubmit = inputs => console.log('email', inputs)
+
 <Contact buttonLabel="Open the modal" handleTextSubmit={handleTextSubmit} handleEmailSubmit={handleEmailSubmit} />
+```
+## **Hover HOC**
+| **Parameters** | **Type** | **Other Info** *(optional)* |
+| -- | -- | -- |
+| HoverComponent | *React component* | The component to be displayed on hover |
+| DisplayComponent | *React component* | The component with the hover behavior |
+
+| **className** | **Description** *(optional)* |
+| -- | -- |
+| CC-Hover--display | Container for the Display Component|
+| CC-Hover--modal | Container for the Modal Component|
+```
+const Label = () => <h1>Hover over me</h1>;
+const Display = () => <p>This is working and displaying correctly</p>;
+const ConnectedLabel = () => withHover(Display)(Label);
+
+<ConnectedLabel />
 ```
