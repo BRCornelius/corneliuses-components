@@ -1,0 +1,40 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+require("core-js/modules/web.dom-collections.iterator.js");
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _browserUtilities = require("../../utilities/browserUtilities");
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+const withHover = HoverComponent => DisplayComponent => {
+  const [open, setOpen] = (0, _react.useState)(false);
+  const position = (0, _browserUtilities.useMousePosition)();
+  const hoverStyle = {
+    position: "absolute",
+    zIndex: 999999,
+    top: position.y + 20,
+    left: position.x + 20,
+    overflow: "wrap"
+  };
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "CC-Hover--display",
+    onMouseEnter: () => setOpen(true),
+    onMouseLeave: () => setOpen(false)
+  }, /*#__PURE__*/_react.default.createElement(DisplayComponent, null)), open && /*#__PURE__*/_react.default.createElement("div", {
+    className: "CC-Hover--modal",
+    id: "hover-modal",
+    style: hoverStyle
+  }, /*#__PURE__*/_react.default.createElement(HoverComponent, null)));
+};
+
+var _default = withHover;
+exports.default = _default;

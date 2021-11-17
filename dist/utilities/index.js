@@ -9,6 +9,12 @@ Object.defineProperty(exports, "isMobile", {
     return _browserUtilities.isMobile;
   }
 });
+Object.defineProperty(exports, "useMousePosition", {
+  enumerable: true,
+  get: function get() {
+    return _browserUtilities.useMousePosition;
+  }
+});
 Object.defineProperty(exports, "useOutsideClick", {
   enumerable: true,
   get: function get() {

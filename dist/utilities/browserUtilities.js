@@ -3,7 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.useOutsideClick = exports.isMobile = void 0;
+exports.useOutsideClick = exports.useMousePosition = exports.isMobile = void 0;
+
+require("core-js/modules/web.dom-collections.iterator.js");
 
 var _react = require("react");
 
@@ -26,3 +28,24 @@ const useOutsideClick = (ref, clickFunction) => {
 };
 
 exports.useOutsideClick = useOutsideClick;
+
+const useMousePosition = () => {
+  const [position, setPosition] = (0, _react.useState)({
+    x: 0,
+    y: 0
+  });
+  (0, _react.useEffect)(() => {
+    const handleMouseMove = e => {
+      setPosition({
+        x: e.clientX,
+        y: e.clientY
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  });
+  return position;
+};
+
+exports.useMousePosition = useMousePosition;

@@ -33,6 +33,12 @@ Object.defineProperty(exports, "SocialFooter", {
     return _SocialFooter.default;
   }
 });
+Object.defineProperty(exports, "withHover", {
+  enumerable: true,
+  get: function get() {
+    return _withHover.default;
+  }
+});
 
 var _Contact = _interopRequireDefault(require("./Contact/Contact"));
 
@@ -44,4 +50,8 @@ var _NavigationHeader = _interopRequireDefault(require("./NavigationHeader/Navig
 
 var _SocialFooter = _interopRequireDefault(require("./SocialFooter/SocialFooter"));
 
+var _withHover = _interopRequireDefault(require("./Hover/withHover"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+;
