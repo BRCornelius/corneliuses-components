@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SocialFooter = ({socialLinks, children, isCorneliuses}) => <div className="CC-Social_Footer--container">
-    <div className="CC-Social_Footer--links_primary">
-        {socialLinks.map(link => <a key={link.id} class="CC-Social_Footer--link" id={link.id} href={link.path}>{link.label}</a>)}
+const SocialFooter = ({customClass, socialLinks, children, isCorneliuses}) => {
+    const className = customClass || 'CC-Social_Footer';
+    return <div className={`${className}--container`}>
+        <div className={`${className}--links_primary`}>
+            {socialLinks.map(link => <a key={link.id} class={`${className}--link`} id={link.id} href={link.path}>{link.label}</a>)}
+        </div>
+        <div className={`${className}--links_secondary`}>
+            {isCorneliuses && <a class={`${className}--link`} id="corneliuses" href="http://corneliuses.com">Family</a>}
+            {children}
+        </div>
     </div>
-    <div className="CC-Social_Footer--links_secondary">
-        {isCorneliuses && <a class="CC-Social_Footer--link" id="corneliuses" href="http://corneliuses.com">Family</a>}
-        {children}
-    </div>
-</div>
+};
 
 SocialFooter.propTypes = {
     children: PropTypes.node,

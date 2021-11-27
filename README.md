@@ -28,6 +28,7 @@ The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifi
 | -- | -- | -- | -- |
 | buttonLabel | *string* | | |
 | children | *React node* | | |
+| customClass | *string* | | |
 | value | *string* | Yes | |
 
 | **className** | **Description** *(optional)* |
@@ -64,6 +65,7 @@ const item = {label: "This is a button.", url: "item.image.com"};
 ## **Navigation Header**
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
+| customClass | *string* | | |
 | icon | *string* | | The url of the icon to be used for the svp menu |
 | logo | *string* | Yes | The url of the logo to be used |
 | links | *array* | Yes | **Element schema:** { label: *string*, path: *string* } |
@@ -88,6 +90,7 @@ const links = [{label: 'Home', path: 'home'},{label: 'New World', path: 'new-wor
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | children | *node* | | |
+| customClass | *string* | | |
 | isCorneliuses | *boolean* | | |
 | socialLinks | *array* |  | **Element schema:** {id: *string*, label: *string*, path: *string*} |
 
@@ -107,6 +110,7 @@ const socialLinks = [{id: 'twitter', label: 'Twitter', path: 'www.twitter.com'},
 ## **Contact Form**
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
+| customClass | *string* | | |
 | handleSubmit | *function* | Yes | Function to run on submit of form with form contents as parameter object |
 
 | **className** | **Description** *(optional)* |
@@ -125,6 +129,7 @@ const handleSubmit = (inputs) => console.log(inputs);
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
 | -- | -- | -- | -- |
 | buttonLabel | *string* | | |
+| customClass | *string* | | |
 | handleTextSubmit | *function* | Yes | Will execute with form info as parameters on text submit |
 | handleEmailSubmit | *function* | Yes | Will execute with form info as parameters on email submit |
 
@@ -144,6 +149,7 @@ const handleRmsilSubmit = inputs => console.log('email', inputs)
 ## **Hover HOC**
 | **Parameters** | **Type** | **Other Info** *(optional)* |
 | -- | -- | -- |
+| Setup Object | *object* | { customClass: *string* } |
 | HoverComponent | *React component* | The component to be displayed on hover |
 | DisplayComponent | *React component* | The component with the hover behavior |
 
@@ -154,7 +160,8 @@ const handleRmsilSubmit = inputs => console.log('email', inputs)
 ```
 const Label = () => <h1>Hover over me</h1>;
 const Display = () => <p>This is working and displaying correctly</p>;
-const ConnectedLabel = () => withHover(Display)(Label);
+const setupObject = { customClass: 'example-hover' };
+const ConnectedLabel = () => withHover(setupObject)(Display)(Label);
 
 <ConnectedLabel />
 ```

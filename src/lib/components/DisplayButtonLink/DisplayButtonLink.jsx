@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const DisplayButtonLink = ({buttonLabel,children,value}) => <Link to={`/${value}`} className="CC-Display_Button_Link--container">
+const DisplayButtonLink = ({buttonLabel, children, customClass, value}) => <Link to={`/${value}`} className="CC-Display_Button_Link--container">
     {children}
-    <button className="CC-Display_Button_Link--button">
+    <button className={`${customClass || 'CC-Display_Button_Link'}--button`}>
         {buttonLabel}
     </button>
 </Link>;
@@ -12,10 +12,12 @@ const DisplayButtonLink = ({buttonLabel,children,value}) => <Link to={`/${value}
 DisplayButtonLink.propTypes = {
     buttonLabel: PropTypes.string,
     children: PropTypes.node,
+    customClass: PropTypes.string,
     value: PropTypes.string.isRequired
 };
 DisplayButtonLink.defaultProps = {
-    buttonLabel: ""
+    buttonLabel: "",
+    customClass: ""
 };
 
 export default DisplayButtonLink;
