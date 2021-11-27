@@ -3,8 +3,18 @@ import ContactForm from "./Contact/ContactForm";
 import DisplayButtonFunctional from "./DisplayButtonFunctional/DisplayButtonFunctional";
 import DisplayButtonLink from "./DisplayButtonLink/DisplayButtonLink";
 import NavigationHeader from "./NavigationHeader/NavigationHeader";
+import ScrollOnNavigate from "./ScrollOnNavigate/ScrollOnNavigate";
 import SocialFooter from "./SocialFooter/SocialFooter";
 import withHover from "./Hover/withHover";
 import withVideoDisplay from "./VideoDisplay/withVideoDisplay";
 
-export { Contact, ContactForm, DisplayButtonFunctional, DisplayButtonLink, NavigationHeader, SocialFooter, withHover, withVideoDisplay };
+export {
+    Contact, ContactForm,
+    DisplayButtonFunctional,
+    DisplayButtonLink,
+    NavigationHeader,
+    ScrollOnNavigate,
+    SocialFooter,
+    withHover,
+    withVideoDisplay
+};
