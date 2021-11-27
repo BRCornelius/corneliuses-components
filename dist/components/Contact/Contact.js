@@ -22,19 +22,21 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const Contact = _ref => {
   let {
     buttonLabel,
+    customClass,
     handleTextSubmit,
     handleEmailSubmit
   } = _ref;
   const [open, setOpen] = (0, _react.useState)(false);
-  const [method, setMethod] = (0, _react.useState)("email");
+  const [method, setMethod] = (0, _react.useState)('email');
+  const className = customClass || 'CC-Contact';
 
-  const isMethodActive = selectedMethod => selectedMethod === method ? "CC-Contact--method_active" : "CC-Contact--method_inactive";
+  const isMethodActive = selectedMethod => selectedMethod === method ? "".concat(className, "--method_active") : "".concat(className, "--method_inactive");
 
   const handleSubmit = method === 'email' ? handleEmailSubmit : handleTextSubmit;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, open & /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Contact--modal"
+    className: "".concat(className, "--modal")
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Contact--methods"
+    className: "".concat(className, "--methods")
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: isMethodActive('email'),
     onClick: () => setMethod('email')
@@ -44,18 +46,20 @@ const Contact = _ref => {
   }, "Text"), /*#__PURE__*/_react.default.createElement(_ContactForm.default, {
     handleSubmit: handleSubmit
   }))), /*#__PURE__*/_react.default.createElement("button", {
-    className: "CC-Contact--button",
+    className: "".concat(className, "--button"),
     onClick: () => setOpen(!open)
   }, buttonLabel));
 };
 
 Contact.propTypes = {
   buttonLabel: _propTypes.default.string,
+  customClass: _propTypes.default.string,
   handleEmailSubmit: _propTypes.default.func.isRequired,
   handleTextSubmit: _propTypes.default.func.isRequired
 };
 Contact.defaultProps = {
-  buttonLabel: "Contact Me"
+  buttonLabel: 'Contact Me',
+  customClass: ""
 };
 var _default = Contact;
 exports.default = _default;

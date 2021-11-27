@@ -23,6 +23,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 const NavigationHeader = _ref => {
   let {
+    customClass,
     icon,
     logo,
     links
@@ -32,47 +33,50 @@ const NavigationHeader = _ref => {
   const toggleNav = () => setOpen(!open);
 
   const wrapperRef = (0, _react.useRef)(null);
+  const className = customClass || 'CC-Navigation-Header';
   (0, _utilities.useOutsideClick)(wrapperRef, toggleNav);
   return _utilities.isMobile ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Navigation-Header--top_bar"
+    className: "".concat(className, "--top_bar")
   }, /*#__PURE__*/_react.default.createElement("img", {
     alt: "logo",
-    className: "CC-Navigation-Header--logo",
+    className: "".concat(className, "--logo"),
     src: logo
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: open ? "CC-Navigation-Header--hamburger_open" : "CC-Navigation-Header--hamburger_menu"
+    className: open ? "".concat(className, "--hamburger_open") : "".concat(className, "--hamburger_menu")
   }, !open && /*#__PURE__*/_react.default.createElement("img", {
     alt: "menu",
-    className: "CC-Navigation-Header--hamburger_icon",
+    className: "".concat(className, "--hamburger_icon"),
     src: icon,
     onClick: toggleNav
   }), open && /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Navigation-Header--links-menu",
+    className: "".concat(className, "--links-menu"),
     ref: wrapperRef
   }, links.map(link => /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/".concat(link.path),
-    className: "CC-Navigation-Header--nav-link",
+    className: "".concat(className, "--nav-link"),
     onClick: toggleNav
   }, link.label))))) : /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Navigation-Header--nav_menu"
+    className: "".concat(className, "--nav_menu")
   }, /*#__PURE__*/_react.default.createElement("img", {
     alt: "logo",
-    className: "CC-Navigation-Header--logo",
+    className: "".concat(className, "--logo"),
     src: logo
   }), /*#__PURE__*/_react.default.createElement("nav", {
-    className: "CC-Navigation-Header--nav-link-container"
+    className: "".concat(className, "--nav-link-container")
   }, links.map(link => /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/".concat(link.path),
-    className: "CC-Navigation-Header--nav-link"
+    className: "".concat(className, "--nav-link")
   }, link.label))));
 };
 
 NavigationHeader.propTypes = {
+  customClass: _propTypes.default.string,
   icon: _propTypes.default.string,
   logo: _propTypes.default.string,
   links: _propTypes.default.arrayOf({}).isRequired
 };
 NavigationHeader.defaultProps = {
+  customClass: "",
   icon: "https://img.icons8.com/material-outlined/24/000000/menu--v1.png",
   logo: ""
 };

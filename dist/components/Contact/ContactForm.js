@@ -13,6 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const ContactForm = _ref => {
   let {
+    customClass,
     handleSubmit
   } = _ref;
 
@@ -44,44 +45,49 @@ const ContactForm = _ref => {
     });
   };
 
+  const className = customClass || 'CC-Contact_Form';
   return /*#__PURE__*/_react.default.createElement("form", {
-    className: "CC-Contact_Form--form",
+    className: "".concat(className, "--form"),
     onSubmit: submitValues
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Contact_Form--names"
+    className: "".concat(className, "--names")
   }, /*#__PURE__*/_react.default.createElement("input", {
-    className: "CC-Contact_Form--input",
+    className: "".concat(className, "--input"),
     type: "text",
     placeholder: "First Name",
     name: "firstName"
   }), /*#__PURE__*/_react.default.createElement("input", {
-    className: "CC-Contact_Form--input",
+    className: "".concat(className, "--input"),
     type: "text",
     placeholder: "Last Name",
     name: "lastName"
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Contact_Form--contacts"
+    className: "".concat(className, "--contacts")
   }, /*#__PURE__*/_react.default.createElement("input", {
-    className: "CC-Contact_Form--input",
+    className: "".concat(className, "--input"),
     type: "email",
     placeholder: "Email",
     name: "email"
   }), /*#__PURE__*/_react.default.createElement("input", {
-    className: "CC-Contact_Form--input",
+    className: "".concat(className, "--input"),
     type: "phone",
     placeholder: "Phone Number",
     name: "phone"
   })), /*#__PURE__*/_react.default.createElement("textarea", {
-    className: "CC-Contact_Form--message",
+    className: "".concat(className, "--message"),
     placeholder: "Enter your message and I will get back to you as soon as possible",
     name: "message"
   }), /*#__PURE__*/_react.default.createElement("input", {
-    className: "CC-Contact_Form--submit"
+    className: "".concat(className, "--submit")
   }));
 };
 
 ContactForm.propTypes = {
-  handleSubmit: _propTypes.default.func.isRequired
+  handleSubmit: _propTypes.default.func.isRequired,
+  customClass: _propTypes.default.string
+};
+ContactForm.defaultProps = {
+  customClass: ""
 };
 var _default = ContactForm;
 exports.default = _default;

@@ -13,23 +13,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const SocialFooter = _ref => {
   let {
+    customClass,
     socialLinks,
     children,
     isCorneliuses
   } = _ref;
+  const className = customClass || 'CC-Social_Footer';
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Social_Footer--container"
+    className: "".concat(className, "--container")
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Social_Footer--links_primary"
+    className: "".concat(className, "--links_primary")
   }, socialLinks.map(link => /*#__PURE__*/_react.default.createElement("a", {
     key: link.id,
-    class: "CC-Social_Footer--link",
+    class: "".concat(className, "--link"),
     id: link.id,
     href: link.path
   }, link.label))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "CC-Social_Footer--links_secondary"
+    className: "".concat(className, "--links_secondary")
   }, isCorneliuses && /*#__PURE__*/_react.default.createElement("a", {
-    class: "CC-Social_Footer--link",
+    class: "".concat(className, "--link"),
     id: "corneliuses",
     href: "http://corneliuses.com"
   }, "Family"), children));
