@@ -1,5 +1,6 @@
 import Contact from "./Contact/Contact";
 import ContactForm from "./Contact/ContactForm";
+import Drawer from './Drawer/Drawer';
 import DisplayButtonFunctional from "./DisplayButtonFunctional/DisplayButtonFunctional";
 import DisplayButtonLink from "./DisplayButtonLink/DisplayButtonLink";
 import NavigationHeader from "./NavigationHeader/NavigationHeader";
@@ -12,6 +13,7 @@ export {
     Contact, ContactForm,
     DisplayButtonFunctional,
     DisplayButtonLink,
+    Drawer,
     NavigationHeader,
     ScrollOnNavigate,
     SocialFooter,
