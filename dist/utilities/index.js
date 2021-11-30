@@ -3,6 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+Object.defineProperty(exports, "OpenCloseIcon", {
+  enumerable: true,
+  get: function get() {
+    return _icons.OpenCloseIcon;
+  }
+});
 Object.defineProperty(exports, "isMobile", {
   enumerable: true,
   get: function get() {
@@ -23,3 +29,5 @@ Object.defineProperty(exports, "useOutsideClick", {
 });
 
 var _browserUtilities = require("./browserUtilities");
+
+var _icons = require("./icons");
