@@ -34,15 +34,18 @@ const Drawer = _ref => {
 
   const icon = /*#__PURE__*/_react.default.createElement("img", {
     alt: label,
-    src: src,
-    onClick: () => setOpen(!open)
+    className: "".concat(className, "--icon"),
+    src: src
   });
 
   const expandIcon = openIcon || icon;
   const collapseIcon = closeIcon || icon;
   const openCloseIcon = open ? expandIcon : collapseIcon;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--label_container")
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "".concat(className, "--display_container")
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "".concat(className, "--label_container"),
+    onClick: () => setOpen(!open)
   }, imageUrl && /*#__PURE__*/_react.default.createElement("img", {
     alt: label,
     className: "".concat(className, "--label_image"),
