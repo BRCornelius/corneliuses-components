@@ -13,12 +13,12 @@ const Drawer = ({
     const [open, setOpen] = useState(false);
     const className = customClass || 'CC-Drawer';
     let src = open ? 'https://assets.corneliuses.com/photos/common/collapse_up.png' : 'https://assets.corneliuses.com/photos/common/collapse_down.png';
-    const icon = <img alt={label} src={src} onClick={() => setOpen(!open)} />;
+    const icon = <img alt={label} className={`${className}--icon`} src={src} />;
     const expandIcon = openIcon || icon;
     const collapseIcon = closeIcon || icon;
     const openCloseIcon = open ? expandIcon : collapseIcon;
     return <div className={`${className}--display_container`}>
-        <div className={`${className}--label_container`}>
+        <div className={`${className}--label_container`} onClick={() => setOpen(!open)} >
             {imageUrl && <img alt={label} className={`${className}--label_image`} src={imageUrl} />}
             {label}
             {openCloseIcon}

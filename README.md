@@ -1,27 +1,3 @@
-## Available Scripts
-In the project directory, you can run:
-### `yarn start`
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-### `yarn babel`
-Builds the app for production to the `dist` folder.\
-It correctly bundles the React components and optimizes the build for the best performance.
----
-# Coding Standards
-### Exporting components
-Components should be exported as default from their file but as a part of the global export object from the app.
-### Styling
-The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifier`.
-### Publishing
-
-- Update the package.json file with a new version number.
-  - Major versions are for new features and integrations.
-  - Minor versions are for new components or extant feature expansions.
-- Run: `yarn babel` then `npm publish`
----
 # Component Documentation
 ## **Display Button Link**
 | **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
@@ -175,7 +151,7 @@ const ConnectedLabel = () => withHover(setupObject)(Display)(Label);
 | -- | -- |
 | CC-Video_Display--container | Container for the Video Display and the list |
 | CC-Video_Display--video | Actual video tag|
-``` 
+```
 const Videos = {{clickFunction, videos}) => <>
   {videos.map(video => <div onClick={() => clickFunction(video.url)}>video.title<div/>)}
 </>;
@@ -200,3 +176,51 @@ function App() {
   );
 }
 ```
+## **Drawer**
+| **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
+| -- | -- | -- | -- |
+| children | *node* | | |
+| customClass | *string* | | |
+| imageUrl | *string* | | For the image alongside the label |
+| label | *string* | Yes | |
+| closeIcon | *node* | | The icon to close the drawer |
+| openIcon | *node* | | The icon to open the drawer |
+
+| **className** | **Description** *(optional)* |
+| -- | -- |
+| CC-Drawer--display_container | The container for the label and contents |
+| CC-Drawer--label_container | Container for the label |
+| CC-Drawer--label_image | Image displayed beside the label |
+| CC-Drawer--expanded_container | Container for expanded content |
+| CC-Drawer--icon | Default open and close icon |
+```
+<Drawer imageUrl="product.image.com" label="Product Name">
+  <h1>See this content</>
+  <p>But only when the drawer is open</p>
+</Drawer>
+```
+
+# Coding Standards
+## Exporting components
+Components should be exported as default from their file but as a part of the global export object from the app.
+## Styling
+The className naming convention used in this app is `CC-<COMPONENT_NAME>--Modifier`.
+## Available Scripts
+In the project directory, you can run:
+### `yarn start`
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+### `yarn babel`
+Builds the app for production to the `dist` folder.\
+It correctly bundles the React components and optimizes the build for the best performance.
+## Publishing
+
+- Update the package.json file with a new version number.
+  - Major versions are for new features and integrations.
+  - Minor versions are for new components or extant feature expansions.
+- Run: `yarn babel` then `npm publish`
+---
+---
