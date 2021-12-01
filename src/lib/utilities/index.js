@@ -6,8 +6,12 @@ import {
 import {
     OpenCloseIcon
 } from './icons';
+import {
+    getInterstitialImage
+} from './interstitialUtilities';
 
 export {
+    getInterstitialImage,
     isMobile,
     OpenCloseIcon,
     useMousePosition,

@@ -9,6 +9,12 @@ Object.defineProperty(exports, "OpenCloseIcon", {
     return _icons.OpenCloseIcon;
   }
 });
+Object.defineProperty(exports, "getInterstitialImage", {
+  enumerable: true,
+  get: function get() {
+    return _interstitialUtilities.getInterstitialImage;
+  }
+});
 Object.defineProperty(exports, "isMobile", {
   enumerable: true,
   get: function get() {
@@ -31,3 +37,5 @@ Object.defineProperty(exports, "useOutsideClick", {
 var _browserUtilities = require("./browserUtilities");
 
 var _icons = require("./icons");
+
+var _interstitialUtilities = require("./interstitialUtilities");
