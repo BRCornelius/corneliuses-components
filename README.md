@@ -213,6 +213,45 @@ function App() {
 ```
 <Interstitial condition={true} imageSource="sample.image.com" />
 ```
+## Error
+| **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
+| -- | -- | -- | -- |
+| copy | *string* | | |
+| customClass | *string* | | |
+| imageUrl | *string* | | |
+| hasError | *boolean* | Yes | |
+| redirect | *string* | | |
+| setHasError | *function* Yes | |
+
+| **className** | **Description** *(optional)* |
+| -- | -- |
+| CC-Error--container | Container for image and copy |
+| CC-Error--image | Image |
+| CC-Error--copy | Copy |
+```
+const [error, setError] = useState(false)
+<Error copy="There has been an error" imageUrl="image.com" hasError={error} redirect="where.to-end-up.com" setHasError={setError} >
+```
+## Router
+| **Props** | **Type** | **Required?** | **Other Info** *(optional)* |
+| -- | -- | -- | -- |
+| routes | *array* | Yes | **Element Schema:** { path: *string*, element: *ElementType* } |
+``` App.js
+import { SplashPage, ContactPage, AboutUsPage } from './views
+
+const routes = [{
+  path: '',
+  element: SplashPage
+}, {
+  path: '/contact',
+  element: ContactPage
+}, {
+  path: '/about',
+  element: AboutUsPage
+}];
+
+<Router routes={routes} />
+```
 
 # Coding Standards
 ## Exporting components

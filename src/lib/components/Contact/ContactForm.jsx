@@ -15,19 +15,17 @@ const ContactForm = ({customClass, handleSubmit}) => {
         handleSubmit({firstName,lastName,email,phone,message});
     };
 
-    const className = customClass || 'CC-Contact_Form';
-
-    return <form className={`${className}--form`} onSubmit={submitValues}>
-        <div className={`${className}--names`}>
-            <input className={`${className}--input`} type="text" placeholder="First Name" name="firstName" />
-            <input className={`${className}--input`} type="text" placeholder="Last Name" name="lastName" />
+    return <form className={`${customClass}--form`} onSubmit={submitValues}>
+        <div className={`${customClass}--names`}>
+            <input className={`${customClass}--input`} type="text" placeholder="First Name" name="firstName" />
+            <input className={`${customClass}--input`} type="text" placeholder="Last Name" name="lastName" />
         </div>
-        <div className={`${className}--contacts`}>
-            <input className={`${className}--input`} type="email" placeholder="Email" name="email" />
-            <input className={`${className}--input`} type="phone" placeholder="Phone Number" name="phone" />
+        <div className={`${customClass}--contacts`}>
+            <input className={`${customClass}--input`} type="email" placeholder="Email" name="email" />
+            <input className={`${customClass}--input`} type="phone" placeholder="Phone Number" name="phone" />
         </div>
-        <textarea className={`${className}--message`} placeholder="Enter your message and I will get back to you as soon as possible" name="message" />
-        <input className={`${className}--submit`} />
+        <textarea className={`${customClass}--message`} placeholder="Enter your message and I will get back to you as soon as possible" name="message" />
+        <input className={`${customClass}--submit`} />
     </form>
 }
 
@@ -36,7 +34,7 @@ ContactForm.propTypes = {
     customClass: PropTypes.string
 };
 ContactForm.defaultProps = {
-    customClass: ""
+    customClass: 'CC-Contact_Form'
 };
 
 export default ContactForm;
