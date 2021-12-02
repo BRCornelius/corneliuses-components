@@ -45,40 +45,39 @@ const ContactForm = _ref => {
     });
   };
 
-  const className = customClass || 'CC-Contact_Form';
   return /*#__PURE__*/_react.default.createElement("form", {
-    className: "".concat(className, "--form"),
+    className: "".concat(customClass, "--form"),
     onSubmit: submitValues
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--names")
+    className: "".concat(customClass, "--names")
   }, /*#__PURE__*/_react.default.createElement("input", {
-    className: "".concat(className, "--input"),
+    className: "".concat(customClass, "--input"),
     type: "text",
     placeholder: "First Name",
     name: "firstName"
   }), /*#__PURE__*/_react.default.createElement("input", {
-    className: "".concat(className, "--input"),
+    className: "".concat(customClass, "--input"),
     type: "text",
     placeholder: "Last Name",
     name: "lastName"
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--contacts")
+    className: "".concat(customClass, "--contacts")
   }, /*#__PURE__*/_react.default.createElement("input", {
-    className: "".concat(className, "--input"),
+    className: "".concat(customClass, "--input"),
     type: "email",
     placeholder: "Email",
     name: "email"
   }), /*#__PURE__*/_react.default.createElement("input", {
-    className: "".concat(className, "--input"),
+    className: "".concat(customClass, "--input"),
     type: "phone",
     placeholder: "Phone Number",
     name: "phone"
   })), /*#__PURE__*/_react.default.createElement("textarea", {
-    className: "".concat(className, "--message"),
+    className: "".concat(customClass, "--message"),
     placeholder: "Enter your message and I will get back to you as soon as possible",
     name: "message"
   }), /*#__PURE__*/_react.default.createElement("input", {
-    className: "".concat(className, "--submit")
+    className: "".concat(customClass, "--submit")
   }));
 };
 
@@ -87,7 +86,7 @@ ContactForm.propTypes = {
   customClass: _propTypes.default.string
 };
 ContactForm.defaultProps = {
-  customClass: ""
+  customClass: 'CC-Contact_Form'
 };
 var _default = ContactForm;
 exports.default = _default;

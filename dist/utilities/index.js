@@ -9,6 +9,12 @@ Object.defineProperty(exports, "OpenCloseIcon", {
     return _icons.OpenCloseIcon;
   }
 });
+Object.defineProperty(exports, "defaultErrorCopy", {
+  enumerable: true,
+  get: function get() {
+    return _errorUtilities.defaultErrorCopy;
+  }
+});
 Object.defineProperty(exports, "getInterstitialImage", {
   enumerable: true,
   get: function get() {
@@ -35,6 +41,8 @@ Object.defineProperty(exports, "useOutsideClick", {
 });
 
 var _browserUtilities = require("./browserUtilities");
+
+var _errorUtilities = require("./errorUtilities");
 
 var _icons = require("./icons");
 
