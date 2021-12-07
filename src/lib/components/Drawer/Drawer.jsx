@@ -11,19 +11,18 @@ const Drawer = ({
     openIcon
 }) => {
     const [open, setOpen] = useState(false);
-    const className = customClass || 'CC-Drawer';
     let src = open ? 'https://assets.corneliuses.com/photos/common/collapse_up.png' : 'https://assets.corneliuses.com/photos/common/collapse_down.png';
-    const icon = <img alt={label} className={`${className}--icon`} src={src} />;
+    const icon = <img alt={label} className={`${customClass}--icon`} src={src} />;
     const expandIcon = openIcon || icon;
     const collapseIcon = closeIcon || icon;
     const openCloseIcon = open ? expandIcon : collapseIcon;
-    return <div className={`${className}--display_container`}>
-        <div className={`${className}--label_container`} onClick={() => setOpen(!open)} >
-            {imageUrl && <img alt={label} className={`${className}--label_image`} src={imageUrl} />}
+    return <div className={`${customClass}--display_container`}>
+        <div className={`${customClass}--label_container`} onClick={() => setOpen(!open)} >
+            {imageUrl && <img alt={label} className={`${customClass}--label_image`} src={imageUrl} />}
             {label}
             {openCloseIcon}
         </div>
-        {open && <div className={`${className}--expanded_container`}>
+        {open && <div className={`${customClass}--expanded_container`}>
             {children}
         </div>}
     </div>
@@ -37,8 +36,8 @@ Drawer.propTypes = {
     OpenIcon: PropTypes.node
 };
 Drawer.defaultProps = {
-    customClass: "",
-    imageUrl: "",
+    customClass: 'CC-Drawer',
+    imageUrl: '',
     CloseIcon: OpenCloseIcon,
     OpenIcon: OpenCloseIcon
 };

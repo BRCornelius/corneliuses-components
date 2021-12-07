@@ -7,40 +7,40 @@ const NavigationHeader = ({customClass, icon, logo, links}) => {
     const [open, setOpen] =useState(false)
     const toggleNav = () => setOpen(!open)
     const wrapperRef = useRef(null)
-    const className = customClass || 'CC-Navigation-Header';
 
     useOutsideClick(wrapperRef, toggleNav)
 
     return isMobile
         ? <>
-            <div className={`${className}--top_bar`}>
-                <img alt="logo" className={`${className}--logo`} src={logo} />
+            <div className={`${customClass}--top_bar`}>
+                <img alt="logo" className={`${customClass}--logo`} src={logo} />
             </div>
-            <div className={open ? `${className}--hamburger_open` : `${className}--hamburger_menu`}>
-                {!open && <img alt="menu" className={`${className}--hamburger_icon`} src={icon} onClick={toggleNav}/>}
-                {open && <div className={`${className}--links-menu`} ref={wrapperRef}>
-                    {links.map(link => <Link to={`/${link.path}`} className={`${className}--nav-link`} onClick={toggleNav}>{link.label}</Link>)}
+            <div className={open ? `${customClass}--hamburger_open` : `${customClass}--hamburger_menu`}>
+                {!open && <img alt="menu" className={`${customClass}--hamburger_icon`} src={icon} onClick={toggleNav}/>}
+                {open && <div className={`${customClass}--links-menu`} ref={wrapperRef}>
+                    {links.map(link => <Link to={`/${link.path}`} className={`${customClass}--nav-link`} onClick={toggleNav}>{link.label}</Link>)}
                 </div>}
             </div>
         </>
-        : <div className={`${className}--nav_menu`}>
-            <img alt="logo" className={`${className}--logo`} src={logo} />
-            <nav className={`${className}--nav-link-container`}>
-                {links.map(link => <Link to={`/${link.path}`} className={`${className}--nav-link`}>{link.label}</Link>)}
+        : <div className={`${customClass}--nav_menu`}>
+            <img alt="logo" className={`${customClass}--logo`} src={logo} />
+            <nav className={`${customClass}--nav-link-container`}>
+                {links.map(link => <Link to={`/${link.path}`} className={`${customClass}--nav-link`}>{link.label}</Link>)}
             </nav>
         </div>
-}
-
+};
 NavigationHeader.propTypes = {
     customClass: PropTypes.string,
     icon: PropTypes.string,
     logo: PropTypes.string,
-    links: PropTypes.arrayOf({}).isRequired,
-}
+    links: PropTypes.arrayOf(PropTypes.shape({
+        label: PropTypes.string,
+        path: PropTypes.string
+    })).isRequired,
+};
 NavigationHeader.defaultProps = {
-    customClass: "",
+    customClass: 'CC-Navigation-Header',
     icon: "https://img.icons8.com/material-outlined/24/000000/menu--v1.png",
     logo: ""
-}
-
+};
 export default NavigationHeader;

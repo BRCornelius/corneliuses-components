@@ -5,19 +5,18 @@ import ContactForm from './ContactForm';
 const Contact = ({buttonLabel, customClass, handleTextSubmit, handleEmailSubmit}) => {
     const [open, setOpen] = useState(false);
     const [method, setMethod] = useState('email');
-    const className = customClass || 'CC-Contact';
-    const isMethodActive = selectedMethod => selectedMethod === method ? `${className}--method_active` : `${className}--method_inactive`;
+    const isMethodActive = selectedMethod => selectedMethod === method ? `${customClass}--method_active` : `${customClass}--method_inactive`;
     const handleSubmit = method === 'email' ? handleEmailSubmit : handleTextSubmit;
 
     return <>
-        {open & <div className={`${className}--modal`}>
-            <div className={`${className}--methods`}>
+        {open & <div className={`${customClass}--modal`}>
+            <div className={`${customClass}--methods`}>
                 <button className={isMethodActive('email')} onClick={() => setMethod('email')}>Email</button>
                 <button className={isMethodActive('text')} onClick={() => setMethod('text')}>Text</button>
                 <ContactForm handleSubmit={handleSubmit} />
             </div>
         </div>}
-        <button className={`${className}--button`} onClick={() => setOpen(!open)}>{buttonLabel}</button>
+        <button className={`${customClass}--button`} onClick={() => setOpen(!open)}>{buttonLabel}</button>
     </>
 };
 Contact.propTypes = {
@@ -28,7 +27,7 @@ Contact.propTypes = {
 };
 Contact.defaultProps = {
     buttonLabel: 'Contact Me',
-    customClass: ""
+    customClass: 'CC-Contact'
 };
 
 export default Contact;
