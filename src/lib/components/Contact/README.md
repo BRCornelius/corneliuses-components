@@ -31,6 +31,8 @@ const handleSubmit = (inputs) => console.log(inputs);
 | CC-Contact--method_active | The contact method button when it is active |
 | CC-Contact--method_inactive | The contact method button when it is inactive |
 | CC-Contact--button | Button that opens the contact modal |
+| CC-Contact--close | Closes the modal |
+| CC-Contact--top_row | Top row includes email/text buttons and close |
 ```
 const handleTextSubmit = inputs => console.log('text', inputs)
 const handleRmsilSubmit = inputs => console.log('email', inputs)

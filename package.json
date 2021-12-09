@@ -7,6 +7,7 @@
     "@babel/core": "^7.16.0",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.16.0",
+    "@storybook/addon-knobs": "^6.4.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -20,12 +21,24 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "babel": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files"
+    "babel": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -47,7 +60,14 @@
     "dist",
     "README.md"
   ],
-  "devDependencies": {},
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.4.8",
+    "@storybook/addon-essentials": "^6.4.8",
+    "@storybook/addon-links": "^6.4.8",
+    "@storybook/node-logger": "^6.4.8",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.4.8"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BRCornelius/corneliuses-components.git"

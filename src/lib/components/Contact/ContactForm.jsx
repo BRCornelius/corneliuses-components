@@ -24,8 +24,8 @@ const ContactForm = ({customClass, handleSubmit}) => {
             <input className={`${customClass}--input`} type="email" placeholder="Email" name="email" />
             <input className={`${customClass}--input`} type="phone" placeholder="Phone Number" name="phone" />
         </div>
-        <textarea className={`${customClass}--message`} placeholder="Enter your message and I will get back to you as soon as possible" name="message" />
-        <input className={`${customClass}--submit`} />
+        <textarea className={`${customClass}--message`} placeholder="Enter your message and I will get back to you as soon as possible" name="message" /><br />
+        <input type="submit" className={`${customClass}--submit`} />
     </form>
 }
 

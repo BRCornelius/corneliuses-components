@@ -1,0 +1,45 @@
+.CC-Contact--modal {
+    border: 1px solid black;
+    padding: 0.5rem;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    z-index: 99999;
+}
+.CC-Contact--top_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+.CC-Contact--methods {
+    width: 50%;
+}
+.CC-Contact--method_active {
+    background-color: yellow;
+    font-weight: 600;
+    color: purple;
+    padding: 0.5rem 1rem;
+}
+.CC-Contact--method_inactive {
+    background-color: blue;
+    font-weight: 300;
+    color: white;
+    padding: 0.5rem 0.75rem;
+}
+.CC-Contact--method_inactive:hover {
+    background-color: greenyellow;
+    font-weight: 800;
+}
+.CC-Contact_Form--message {
+    width: -webkit-fill-available;
+}
+.CC-Contact--close {
+    border: 0;
+    background-color: inherit;
+    color: red;
+}
+.CC-Contact--close:hover {
+    color: greenyellow;
+    font-weight: 800;
+}
