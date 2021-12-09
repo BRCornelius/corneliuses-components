@@ -29,12 +29,11 @@ const Drawer = _ref => {
     openIcon
   } = _ref;
   const [open, setOpen] = (0, _react.useState)(false);
-  const className = customClass || 'CC-Drawer';
   let src = open ? 'https://assets.corneliuses.com/photos/common/collapse_up.png' : 'https://assets.corneliuses.com/photos/common/collapse_down.png';
 
   const icon = /*#__PURE__*/_react.default.createElement("img", {
     alt: label,
-    className: "".concat(className, "--icon"),
+    className: "".concat(customClass, "--icon"),
     src: src
   });
 
@@ -42,16 +41,16 @@ const Drawer = _ref => {
   const collapseIcon = closeIcon || icon;
   const openCloseIcon = open ? expandIcon : collapseIcon;
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--display_container")
+    className: "".concat(customClass, "--display_container")
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--label_container"),
+    className: "".concat(customClass, "--label_container"),
     onClick: () => setOpen(!open)
   }, imageUrl && /*#__PURE__*/_react.default.createElement("img", {
     alt: label,
-    className: "".concat(className, "--label_image"),
+    className: "".concat(customClass, "--label_image"),
     src: imageUrl
   }), label, openCloseIcon), open && /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--expanded_container")
+    className: "".concat(customClass, "--expanded_container")
   }, children));
 };
 
@@ -64,8 +63,8 @@ Drawer.propTypes = {
   OpenIcon: _propTypes.default.node
 };
 Drawer.defaultProps = {
-  customClass: "",
-  imageUrl: "",
+  customClass: 'CC-Drawer',
+  imageUrl: '',
   CloseIcon: _utilities.OpenCloseIcon,
   OpenIcon: _utilities.OpenCloseIcon
 };

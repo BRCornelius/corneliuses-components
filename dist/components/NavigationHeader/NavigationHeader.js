@@ -33,39 +33,38 @@ const NavigationHeader = _ref => {
   const toggleNav = () => setOpen(!open);
 
   const wrapperRef = (0, _react.useRef)(null);
-  const className = customClass || 'CC-Navigation-Header';
   (0, _utilities.useOutsideClick)(wrapperRef, toggleNav);
   return _utilities.isMobile ? /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--top_bar")
+    className: "".concat(customClass, "--top_bar")
   }, /*#__PURE__*/_react.default.createElement("img", {
     alt: "logo",
-    className: "".concat(className, "--logo"),
+    className: "".concat(customClass, "--logo"),
     src: logo
   })), /*#__PURE__*/_react.default.createElement("div", {
-    className: open ? "".concat(className, "--hamburger_open") : "".concat(className, "--hamburger_menu")
+    className: open ? "".concat(customClass, "--hamburger_open") : "".concat(customClass, "--hamburger_menu")
   }, !open && /*#__PURE__*/_react.default.createElement("img", {
     alt: "menu",
-    className: "".concat(className, "--hamburger_icon"),
+    className: "".concat(customClass, "--hamburger_icon"),
     src: icon,
     onClick: toggleNav
   }), open && /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--links-menu"),
+    className: "".concat(customClass, "--links-menu"),
     ref: wrapperRef
   }, links.map(link => /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/".concat(link.path),
-    className: "".concat(className, "--nav-link"),
+    className: "".concat(customClass, "--nav-link"),
     onClick: toggleNav
   }, link.label))))) : /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--nav_menu")
+    className: "".concat(customClass, "--nav_menu")
   }, /*#__PURE__*/_react.default.createElement("img", {
     alt: "logo",
-    className: "".concat(className, "--logo"),
+    className: "".concat(customClass, "--logo"),
     src: logo
   }), /*#__PURE__*/_react.default.createElement("nav", {
-    className: "".concat(className, "--nav-link-container")
+    className: "".concat(customClass, "--nav-link-container")
   }, links.map(link => /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/".concat(link.path),
-    className: "".concat(className, "--nav-link")
+    className: "".concat(customClass, "--nav-link")
   }, link.label))));
 };
 
@@ -73,10 +72,13 @@ NavigationHeader.propTypes = {
   customClass: _propTypes.default.string,
   icon: _propTypes.default.string,
   logo: _propTypes.default.string,
-  links: _propTypes.default.arrayOf({}).isRequired
+  links: _propTypes.default.arrayOf(_propTypes.default.shape({
+    label: _propTypes.default.string,
+    path: _propTypes.default.string
+  })).isRequired
 };
 NavigationHeader.defaultProps = {
-  customClass: "",
+  customClass: 'CC-Navigation-Header',
   icon: "https://img.icons8.com/material-outlined/24/000000/menu--v1.png",
   logo: ""
 };

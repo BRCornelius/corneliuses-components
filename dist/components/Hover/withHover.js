@@ -9,7 +9,11 @@ require("core-js/modules/web.dom-collections.iterator.js");
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 var _browserUtilities = require("../../utilities/browserUtilities");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -29,18 +33,23 @@ const withHover = _ref => {
       left: position.x + 20,
       overflow: "wrap"
     };
-    const className = customClass || 'CC-Hover';
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-      className: "".concat(className, "--display"),
+      className: "".concat(customClass, "--display"),
       onMouseEnter: () => setOpen(true),
       onMouseLeave: () => setOpen(false)
     }, /*#__PURE__*/_react.default.createElement(DisplayComponent, null)), open && /*#__PURE__*/_react.default.createElement("div", {
-      className: "".concat(className, "--modal"),
+      className: "".concat(customClass, "--modal"),
       id: "hover-modal",
       style: hoverStyle
     }, /*#__PURE__*/_react.default.createElement(HoverComponent, null)));
   };
 };
 
+withHover.propTypes = {
+  customClass: _propTypes.default.string
+};
+withHover.defaultProps = {
+  customClass: 'CC-Hover'
+};
 var _default = withHover;
 exports.default = _default;

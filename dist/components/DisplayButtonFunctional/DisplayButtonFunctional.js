@@ -19,18 +19,17 @@ const DisplayButtonFunctional = _ref => {
     isActive,
     item
   } = _ref;
-  const className = customClass || 'CC-Display_Button_Functional';
   const classNameModifier = isActive ? 'active' : 'inactive';
   const {
     label,
     url
   } = item;
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--container-").concat(classNameModifier),
+    className: "".concat(customClass, "--container-").concat(classNameModifier),
     onClick: clickFunction
   }, /*#__PURE__*/_react.default.createElement("img", {
     alt: label,
-    className: "".concat(className, "--image"),
+    className: "".concat(customClass, "--image"),
     src: url
   }), children);
 };
@@ -46,7 +45,7 @@ DisplayButtonFunctional.propTypes = {
   }).isRequired
 };
 DisplayButtonFunctional.defaultProps = {
-  customClass: "",
+  customClass: 'CC-Display_Button_Functional',
   isActive: false
 };
 var _default = DisplayButtonFunctional;

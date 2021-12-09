@@ -18,20 +18,19 @@ const SocialFooter = _ref => {
     children,
     isCorneliuses
   } = _ref;
-  const className = customClass || 'CC-Social_Footer';
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--container")
+    className: "".concat(customClass, "--container")
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--links_primary")
+    className: "".concat(customClass, "--links_primary")
   }, socialLinks.map(link => /*#__PURE__*/_react.default.createElement("a", {
     key: link.id,
-    class: "".concat(className, "--link"),
+    class: "".concat(customClass, "--link"),
     id: link.id,
     href: link.path
   }, link.label))), /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--links_secondary")
+    className: "".concat(customClass, "--links_secondary")
   }, isCorneliuses && /*#__PURE__*/_react.default.createElement("a", {
-    class: "".concat(className, "--link"),
+    class: "".concat(customClass, "--link"),
     id: "corneliuses",
     href: "http://corneliuses.com"
   }, "Family"), children));
@@ -39,14 +38,16 @@ const SocialFooter = _ref => {
 
 SocialFooter.propTypes = {
   children: _propTypes.default.node,
+  customClass: _propTypes.default.string,
   isCorneliuses: _propTypes.default.bool,
-  socialLinks: _propTypes.default.arrayOf({
+  socialLinks: _propTypes.default.arrayOf(_propTypes.default.shape({
     id: _propTypes.default.string,
     label: _propTypes.default.string,
     path: _propTypes.default.string
-  }).isRequired
+  })).isRequired
 };
 SocialFooter.defaultProps = {
+  customClass: 'CC-Social_Footer',
   isCorneliuses: false
 };
 var _default = SocialFooter;

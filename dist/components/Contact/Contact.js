@@ -13,6 +13,8 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _ContactForm = _interopRequireDefault(require("./ContactForm"));
 
+require("./Contact.css");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -28,25 +30,33 @@ const Contact = _ref => {
   } = _ref;
   const [open, setOpen] = (0, _react.useState)(false);
   const [method, setMethod] = (0, _react.useState)('email');
-  const className = customClass || 'CC-Contact';
 
-  const isMethodActive = selectedMethod => selectedMethod === method ? "".concat(className, "--method_active") : "".concat(className, "--method_inactive");
+  const isMethodActive = selectedMethod => selectedMethod === method ? "".concat(customClass, "--method_active") : "".concat(customClass, "--method_inactive");
 
-  const handleSubmit = method === 'email' ? handleEmailSubmit : handleTextSubmit;
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, open & /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--modal")
+  const handleSubmit = () => {
+    setOpen(!open);
+    return method === 'email' ? handleEmailSubmit() : handleTextSubmit();
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, open && /*#__PURE__*/_react.default.createElement("div", {
+    className: "".concat(customClass, "--modal")
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(className, "--methods")
+    className: "".concat(customClass, "--top_row")
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "".concat(customClass, "--methods")
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: isMethodActive('email'),
     onClick: () => setMethod('email')
   }, "Email"), /*#__PURE__*/_react.default.createElement("button", {
     className: isMethodActive('text'),
     onClick: () => setMethod('text')
-  }, "Text"), /*#__PURE__*/_react.default.createElement(_ContactForm.default, {
+  }, "Text")), /*#__PURE__*/_react.default.createElement("button", {
+    className: "".concat(customClass, "--close"),
+    onClick: () => setOpen(false)
+  }, "Close X")), /*#__PURE__*/_react.default.createElement(_ContactForm.default, {
     handleSubmit: handleSubmit
-  }))), /*#__PURE__*/_react.default.createElement("button", {
-    className: "".concat(className, "--button"),
+  })), /*#__PURE__*/_react.default.createElement("button", {
+    className: "".concat(customClass, "--button"),
     onClick: () => setOpen(!open)
   }, buttonLabel));
 };
@@ -59,7 +69,7 @@ Contact.propTypes = {
 };
 Contact.defaultProps = {
   buttonLabel: 'Contact Me',
-  customClass: ""
+  customClass: 'CC-Contact'
 };
 var _default = Contact;
 exports.default = _default;

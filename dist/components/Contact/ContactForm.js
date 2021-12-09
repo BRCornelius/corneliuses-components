@@ -76,7 +76,8 @@ const ContactForm = _ref => {
     className: "".concat(customClass, "--message"),
     placeholder: "Enter your message and I will get back to you as soon as possible",
     name: "message"
-  }), /*#__PURE__*/_react.default.createElement("input", {
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("input", {
+    type: "submit",
     className: "".concat(customClass, "--submit")
   }));
 };

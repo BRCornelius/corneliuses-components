@@ -15,28 +15,34 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const DisplayButtonLink = _ref => {
   let {
-    buttonLabel,
     children,
     customClass,
-    value
+    item
   } = _ref;
+  const {
+    label,
+    url
+  } = item;
   return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/".concat(value),
+    to: "/".concat(url),
     className: "CC-Display_Button_Link--container"
-  }, children, /*#__PURE__*/_react.default.createElement("button", {
-    className: "".concat(customClass || 'CC-Display_Button_Link', "--button")
-  }, buttonLabel));
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    alt: label,
+    className: "".concat(customClass, "--image"),
+    src: url
+  }), children);
 };
 
 DisplayButtonLink.propTypes = {
-  buttonLabel: _propTypes.default.string,
   children: _propTypes.default.node,
   customClass: _propTypes.default.string,
-  value: _propTypes.default.string.isRequired
+  item: _propTypes.default.arrayOf(_propTypes.default.shape({
+    label: _propTypes.default.string,
+    url: _propTypes.default.string
+  }))
 };
 DisplayButtonLink.defaultProps = {
-  buttonLabel: "",
-  customClass: ""
+  customClass: 'CC-Display_Button_Link'
 };
 var _default = DisplayButtonLink;
 exports.default = _default;
