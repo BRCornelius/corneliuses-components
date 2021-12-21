@@ -13,10 +13,10 @@ const DisplayButtonLink = ({children, customClass, item}) => {
 DisplayButtonLink.propTypes = {
     children: PropTypes.node,
     customClass: PropTypes.string,
-    item: PropTypes.arrayOf(PropTypes.shape({
+    item: PropTypes.shape({
         label: PropTypes.string,
         url: PropTypes.string
-    }))
+    })
 };
 DisplayButtonLink.defaultProps = {
     customClass: 'CC-Display_Button_Link'

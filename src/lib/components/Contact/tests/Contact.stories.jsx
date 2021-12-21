@@ -1,8 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import Contact from './Contact';
+import Contact from '../Contact';
+import "./Contact.stories.css"
 
-storiesOf('Contact Components', module).add(
+storiesOf('Contact Components', module)
+    .add(
     'Contact Component', () => {
         const props = {
             buttonLabel: 'Button Label',
@@ -10,5 +12,4 @@ storiesOf('Contact Components', module).add(
             handleTextSubmit: () => window.alert('Text Submitted')
         }
         return <Contact {...props} />
-    }
-)
+    });

@@ -15,6 +15,7 @@
 | CC-Drawer--label_image | Image displayed beside the label |
 | CC-Drawer--expanded_container | Container for expanded content |
 | CC-Drawer--icon | Default open and close icon |
+| CC-Drawer--image_and_label | Containes the label and image on the drawer |
 ```
 <Drawer imageUrl="product.image.com" label="Product Name">
   <h1>See this content</>

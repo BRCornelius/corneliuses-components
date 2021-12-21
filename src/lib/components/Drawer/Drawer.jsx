@@ -18,8 +18,10 @@ const Drawer = ({
     const openCloseIcon = open ? expandIcon : collapseIcon;
     return <div className={`${customClass}--display_container`}>
         <div className={`${customClass}--label_container`} onClick={() => setOpen(!open)} >
-            {imageUrl && <img alt={label} className={`${customClass}--label_image`} src={imageUrl} />}
-            {label}
+            <div className={`${customClass}--image_and_label`}>
+                {imageUrl && <img alt={label} className={`${customClass}--label_image`} src={imageUrl} />}
+                {label}
+            </div>
             {openCloseIcon}
         </div>
         {open && <div className={`${customClass}--expanded_container`}>

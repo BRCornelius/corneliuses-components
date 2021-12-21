@@ -1,0 +1,16 @@
+.CC-Drawer--label_image {
+    width: 3rem;
+}
+.CC-Drawer--image_and_label {
+    width: 50%;
+}
+.CC-Drawer--label_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.CC-Drawer--display_container {
+    height: 50vh;
+    overflow: scroll;
+    width: 30vw;
+}
