@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useMousePosition } from '../../utilities/browserUtilities';
 
 const withHover = ({customClass}) => HoverComponent => DisplayComponent => {
     const [open, setOpen] = useState(false);
     const position = useMousePosition();
+    const styleClass = customClass || 'CC-Hover'
     const hoverStyle = {
       position: "absolute",
       zIndex: 999999,
@@ -16,25 +16,19 @@ const withHover = ({customClass}) => HoverComponent => DisplayComponent => {
     return (
       <>
         <div
-          className={`${customClass}--display`}
+          className={`${styleClass}--display`}
           onMouseEnter={() => setOpen(true)}
           onMouseLeave={() => setOpen(false)}
         >
           <DisplayComponent />
         </div>
         {open && (
-          <div className={`${customClass}--modal`} id="hover-modal" style={hoverStyle}>
+          <div className={`${styleClass}--modal`} id="hover-modal" style={hoverStyle}>
             <HoverComponent />
           </div>
         )}
       </>
     );
-};
-withHover.propTypes = {
-  customClass: PropTypes.string
-};
-withHover.defaultProps = {
-  customClass: 'CC-Hover'
 };
 
 export default withHover;

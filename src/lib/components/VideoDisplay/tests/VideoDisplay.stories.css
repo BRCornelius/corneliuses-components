@@ -1,0 +1,16 @@
+.storybook-video_list-container {
+    display: grid;
+    gap: 1rem;
+    width: 100%
+}
+.storybook-video-container {
+    height: 20vh;
+    background-color: blue;
+    color: cornsilk;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.CC-Video_Display--video {
+    width: 100%;
+}

@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 const withVideoDisplay = ({customClass, initialVideoSource}) => ListComponent => {
-    const [activeVideo, setActiveVideo] = useState(initialVideoSource)
-    return <div className={`${customClass}--container`}>
-        { activeVideo && <video className={`${customClass}--video`} src={activeVideo} /> }
+    const styleClass = customClass || 'CC-Video_Display';
+    const initialSource = initialVideoSource || '';
+    const [activeVideo, setActiveVideo] = useState(initialSource)
+    return <div className={`${styleClass}--container`}>
+        { activeVideo && <video className={`${styleClass}--video`} src={activeVideo} controls /> }
         <ListComponent clickFunction={setActiveVideo} />
     </div>;
-};
-withVideoDisplay.propTypes = {
-    customClass: PropTypes.string,
-    initialVideoSource: PropTypes.string,
-    ListComponent: PropTypes.elementType.isRequired
-};
-withVideoDisplay.defaultProps = {
-    customClass: 'CC-Video_Display',
-    initialVideoSource: ''
 };
 
 export default withVideoDisplay;
