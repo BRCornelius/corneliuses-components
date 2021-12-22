@@ -12,7 +12,7 @@
 const Videos = {{clickFunction, videos}) => <>
   {videos.map(video => <div onClick={() => clickFunction(video.url)}>video.title<div/>)}
 </>;
-const initalSetup = { initialVideoSourse: '' };
+const initalSetup = { initialVideoSource: '' };
 const ConnectedVideoList = () => withVideoDisplay(initialSetup)(Videos);
 
 <ConnectedVideoList />

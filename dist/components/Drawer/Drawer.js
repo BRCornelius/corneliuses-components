@@ -45,11 +45,13 @@ const Drawer = _ref => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "".concat(customClass, "--label_container"),
     onClick: () => setOpen(!open)
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "".concat(customClass, "--image_and_label")
   }, imageUrl && /*#__PURE__*/_react.default.createElement("img", {
     alt: label,
     className: "".concat(customClass, "--label_image"),
     src: imageUrl
-  }), label, openCloseIcon), open && /*#__PURE__*/_react.default.createElement("div", {
+  }), label), openCloseIcon), open && /*#__PURE__*/_react.default.createElement("div", {
     className: "".concat(customClass, "--expanded_container")
   }, children));
 };

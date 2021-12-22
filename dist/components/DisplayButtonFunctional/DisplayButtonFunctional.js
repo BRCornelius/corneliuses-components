@@ -25,7 +25,7 @@ const DisplayButtonFunctional = _ref => {
     url
   } = item;
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "".concat(customClass, "--container-").concat(classNameModifier),
+    className: "".concat(customClass, "--container_").concat(classNameModifier),
     onClick: clickFunction
   }, /*#__PURE__*/_react.default.createElement("img", {
     alt: label,

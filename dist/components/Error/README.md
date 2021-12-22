@@ -15,6 +15,6 @@
 | CC-Error--copy | Copy |
 ```
 const [error, setError] = useState(false)
-<Error copy="There has been an error" imageUrl="image.com" hasError={error} redirect="where.to-end-up.com" setHasError={setError} >
+<Error copy="There has been an error" imageUrl="image.com" hasError={error} redirect="where.to-end-up.com" setHasError={setError} />
 ```
 [BACK](../../../../README.md)

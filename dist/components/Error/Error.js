@@ -61,7 +61,7 @@ Error.propTypes = {
 Error.defaultProps = {
   copy: _utilities.defaultErrorCopy,
   customClass: 'CC-Error',
-  defaultErrorUrl: 'https://assets.corneliuses.com/photos/common/error-nedry.gif',
+  imageUrl: 'https://assets.corneliuses.com/photos/common/error-nedry.gif',
   redirect: ''
 };
 var _default = Error;

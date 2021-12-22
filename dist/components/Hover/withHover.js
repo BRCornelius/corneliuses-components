@@ -9,11 +9,7 @@ require("core-js/modules/web.dom-collections.iterator.js");
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
-
 var _browserUtilities = require("../../utilities/browserUtilities");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -26,6 +22,7 @@ const withHover = _ref => {
   return HoverComponent => DisplayComponent => {
     const [open, setOpen] = (0, _react.useState)(false);
     const position = (0, _browserUtilities.useMousePosition)();
+    const styleClass = customClass || 'CC-Hover';
     const hoverStyle = {
       position: "absolute",
       zIndex: 999999,
@@ -34,22 +31,16 @@ const withHover = _ref => {
       overflow: "wrap"
     };
     return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-      className: "".concat(customClass, "--display"),
+      className: "".concat(styleClass, "--display"),
       onMouseEnter: () => setOpen(true),
       onMouseLeave: () => setOpen(false)
     }, /*#__PURE__*/_react.default.createElement(DisplayComponent, null)), open && /*#__PURE__*/_react.default.createElement("div", {
-      className: "".concat(customClass, "--modal"),
+      className: "".concat(styleClass, "--modal"),
       id: "hover-modal",
       style: hoverStyle
     }, /*#__PURE__*/_react.default.createElement(HoverComponent, null)));
   };
 };
 
-withHover.propTypes = {
-  customClass: _propTypes.default.string
-};
-withHover.defaultProps = {
-  customClass: 'CC-Hover'
-};
 var _default = withHover;
 exports.default = _default;

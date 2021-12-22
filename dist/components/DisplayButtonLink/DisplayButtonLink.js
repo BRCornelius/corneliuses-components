@@ -36,10 +36,10 @@ const DisplayButtonLink = _ref => {
 DisplayButtonLink.propTypes = {
   children: _propTypes.default.node,
   customClass: _propTypes.default.string,
-  item: _propTypes.default.arrayOf(_propTypes.default.shape({
+  item: _propTypes.default.shape({
     label: _propTypes.default.string,
     url: _propTypes.default.string
-  }))
+  })
 };
 DisplayButtonLink.defaultProps = {
   customClass: 'CC-Display_Button_Link'
