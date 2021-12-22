@@ -7,6 +7,6 @@ import { ChildComponent, socialLinks } from '../../../utilities/tests/storybookU
 storiesOf('Social Footer', module).add(
     'Social Footer', () => <>
             <ChildComponent />
-            <SocialFooter socialLinks={socialLinks}/>
+            <SocialFooter socialLinks={socialLinks} isCorneliuses />
         </>
 );
